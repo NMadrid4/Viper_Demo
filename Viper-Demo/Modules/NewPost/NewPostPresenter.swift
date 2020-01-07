@@ -16,16 +16,19 @@ class NewPostPresenter: NewPostViewToPresenterProtocol {
     func createPost(title: String?, body: String?) {
         interactor?.createNewPost(with: title, body: body)
     }
+    
+    func backToMain(viewRef: NewPostViewController) {
+        router?.popView(viewRef: viewRef)
+    }
 }
 
 extension NewPostPresenter: NewPostInteractorToPresenterProtocol {
     func createPostSuccess(message: String) {
-        
+        view?.showSuccessMessage(message: message)
     }
     
     func createPostFailure(message: String) {
-        
+        view?.showSuccessFailure(message: message)
     }
-    
     
 }

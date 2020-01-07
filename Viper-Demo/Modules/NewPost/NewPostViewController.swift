@@ -22,6 +22,10 @@ class NewPostViewController: UIViewController, Storyboarded, NewPostPresenterToV
         setDesign()
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
+    
     private func setDesign() {
         bodyTextView.layer.cornerRadius = 5
         bodyTextView.layer.borderWidth = 1
@@ -36,8 +40,9 @@ class NewPostViewController: UIViewController, Storyboarded, NewPostPresenterToV
         showAlert(
             title: "Aviso",
             message: message,
-            completion: { (_) in
-            print("Asdasd")
+            completion: {[weak self] (_) in
+                guard let self = self else { return }
+                self.presenter?.backToMain(viewRef: self)
         }, canCancel: false)
     }
     

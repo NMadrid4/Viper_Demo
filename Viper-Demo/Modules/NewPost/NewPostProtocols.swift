@@ -21,6 +21,7 @@ protocol NewPostViewToPresenterProtocol {
     var view: NewPostPresenterToViewProtocol? { get set }
     
     func createPost(title: String?, body: String?)
+    func backToMain(viewRef: NewPostViewController)
 }
 
 protocol NewPostInteractorToPresenterProtocol {
