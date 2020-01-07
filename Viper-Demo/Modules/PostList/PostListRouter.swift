@@ -21,6 +21,7 @@ class PostListRouter: PostListPresenterToRouterProtocol {
     
     func showAddNewPost(view: PostListViewController) {
         let addNewPostVC = NewPostViewController.instantiate(storyboard: .NewPost)
+        NewPostRouter.createNewPostModule(viewRef: addNewPostVC)
         view.navigationController?.pushViewController(addNewPostVC, animated: true)
     }
     

@@ -9,7 +9,7 @@
 import Foundation
 
 struct Post: Decodable {
-    var id: Int
+    var id: Int?
     var title: String
     var body: String
 }

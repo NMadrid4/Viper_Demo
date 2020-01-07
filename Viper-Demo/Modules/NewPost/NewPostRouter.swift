@@ -8,6 +8,17 @@
 
 import Foundation
 
-class NewPostRouter {
+class NewPostRouter: NewPostPresenterToRouterProtocol {
+    static func createNewPostModule(viewRef: NewPostViewController) {
+        let presenter: NewPostViewToPresenterProtocol & NewPostInteractorToPresenterProtocol = NewPostPresenter()
+        viewRef.presenter = presenter
+        viewRef.presenter?.view = viewRef
+        viewRef.presenter?.router = NewPostRouter()
+        viewRef.presenter?.interactor = NewPostInteractor()
+        viewRef.presenter?.interactor?.presenter = presenter
+    }
     
+    func popView(viewRef: NewPostViewController) {
+        viewRef.navigationController?.popViewController(animated: true)
+    }
 }

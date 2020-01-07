@@ -8,6 +8,24 @@
 
 import Foundation
 
-class NewPostPresenter {
+class NewPostPresenter: NewPostViewToPresenterProtocol {
+    var interactor: NewPostPresenterToInteractorProtocol?
+    var router: NewPostPresenterToRouterProtocol?
+    var view: NewPostPresenterToViewProtocol?
+    
+    func createPost(title: String?, body: String?) {
+        interactor?.createNewPost(with: title, body: body)
+    }
+}
+
+extension NewPostPresenter: NewPostInteractorToPresenterProtocol {
+    func createPostSuccess(message: String) {
+        
+    }
+    
+    func createPostFailure(message: String) {
+        
+    }
+    
     
 }

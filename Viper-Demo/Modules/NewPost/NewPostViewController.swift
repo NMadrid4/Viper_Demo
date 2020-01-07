@@ -8,9 +8,9 @@
 
 import UIKit
 
-class NewPostViewController: UIViewController, Storyboarded {
-    
+class NewPostViewController: UIViewController, Storyboarded, NewPostPresenterToViewProtocol {
     // MARK: - Properties
+    var presenter: NewPostViewToPresenterProtocol?
     
     // MARK: - IBOutlets
     @IBOutlet weak var titleTextField: UITextField!
@@ -32,4 +32,27 @@ class NewPostViewController: UIViewController, Storyboarded {
         titleTextField.layer.borderColor = UIColor.lightGray.cgColor
     }
     
+    func showSuccessMessage(message: String) {
+        showAlert(
+            title: "Aviso",
+            message: message,
+            completion: { (_) in
+            print("Asdasd")
+        }, canCancel: false)
+    }
+    
+    func showSuccessFailure(message: String) {
+        showAlert(
+            title: "Error",
+            message: message,
+            completion: nil
+        )
+    }
+    
+    @IBAction func createPost(_ sender: UIButton) {
+        presenter?.createPost(
+            title: titleTextField.text,
+            body: bodyTextView.text
+        )
+    }
 }

@@ -9,3 +9,4 @@
 import Foundation
 
 typealias GetPostCallback = (Swift.Result<[Post], Error>) -> ()
+typealias CreatePostCallback = (Swift.Result<Post, Error>) -> ()
