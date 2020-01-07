@@ -26,6 +26,7 @@ class NewPostViewController: UIViewController, Storyboarded, NewPostPresenterToV
         view.endEditing(true)
     }
     
+    // MARK: - Set up
     private func setDesign() {
         bodyTextView.layer.cornerRadius = 5
         bodyTextView.layer.borderWidth = 1
@@ -36,6 +37,7 @@ class NewPostViewController: UIViewController, Storyboarded, NewPostPresenterToV
         titleTextField.layer.borderColor = UIColor.lightGray.cgColor
     }
     
+    // MARK: - Actions
     func showSuccessMessage(message: String) {
         showAlert(
             title: "Aviso",
@@ -54,6 +56,7 @@ class NewPostViewController: UIViewController, Storyboarded, NewPostPresenterToV
         )
     }
     
+    // MARK: - IBActions
     @IBAction func createPost(_ sender: UIButton) {
         presenter?.createPost(
             title: titleTextField.text,
