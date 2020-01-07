@@ -10,9 +10,9 @@ import Foundation
 
 class PostListPresenter: PostListViewToPresenterProtocol {
     
-    var interactor: PostListPresenterToInteractorProtocol?
+    weak var interactor: PostListPresenterToInteractorProtocol?
     var router: PostListPresenterToRouterProtocol?
-    var view: PostListPresenterToViewProtocol?
+    weak var view: PostListPresenterToViewProtocol?
     
     func loadPosts() {
         interactor?.getPosts()
