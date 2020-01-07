@@ -1,0 +1,12 @@
+//
+//  Debug.xcconfig
+//  Viper-Demo
+//
+//  Created by Nicolas on 1/7/20.
+//  Copyright © 2020 Nicolas. All rights reserved.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+BASE_URL = https:/$()/jsonplaceholder.typicode.com

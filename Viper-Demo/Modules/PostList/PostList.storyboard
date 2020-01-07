@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cwd-3X-jBe">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Post-->
+        <scene sceneID="RwE-pG-ABr">
+            <objects>
+                <viewController storyboardIdentifier="PostListViewController" id="NYw-BB-C69" customClass="PostListViewController" customModule="Viper_Demo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KzM-Aj-7ke">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NdI-UC-dQJ">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="dJ0-w9-khJ" customClass="PostListTableViewCell" customModule="Viper_Demo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dJ0-w9-khJ" id="3aj-zC-tIY">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VjH-e3-PHc">
+                                                    <rect key="frame" x="20" y="11" width="374" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="VjH-e3-PHc" firstAttribute="leading" secondItem="3aj-zC-tIY" secondAttribute="leadingMargin" id="9fp-JM-izn"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="VjH-e3-PHc" secondAttribute="bottom" id="lpR-NF-0sj"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="VjH-e3-PHc" secondAttribute="trailing" id="q22-zc-r5x"/>
+                                                <constraint firstItem="VjH-e3-PHc" firstAttribute="top" secondItem="3aj-zC-tIY" secondAttribute="topMargin" id="quN-Hw-NcP"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="bodyLabel" destination="VjH-e3-PHc" id="SmY-OZ-z3d"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="NYw-BB-C69" id="Tlh-bA-YlP"/>
+                                    <outlet property="delegate" destination="NYw-BB-C69" id="Cff-uo-42Q"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="NdI-UC-dQJ" firstAttribute="top" secondItem="NAt-AS-Y4q" secondAttribute="top" id="5vO-rf-Nj7"/>
+                            <constraint firstItem="NAt-AS-Y4q" firstAttribute="trailing" secondItem="NdI-UC-dQJ" secondAttribute="trailing" id="YZi-zh-arV"/>
+                            <constraint firstItem="NdI-UC-dQJ" firstAttribute="leading" secondItem="NAt-AS-Y4q" secondAttribute="leading" id="fHN-Ch-rIu"/>
+                            <constraint firstItem="NAt-AS-Y4q" firstAttribute="bottom" secondItem="NdI-UC-dQJ" secondAttribute="bottom" id="zaM-G7-g9P"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="NAt-AS-Y4q"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Post" id="bha-Fi-Cw5"/>
+                    <connections>
+                        <outlet property="postsTableView" destination="NdI-UC-dQJ" id="aI4-UI-MGL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0FT-J6-HVY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="755.07246376811599" y="-78.348214285714278"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="epl-3M-1CI">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cwd-3X-jBe" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="CDs-p4-gsI">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="NYw-BB-C69" kind="relationship" relationship="rootViewController" id="dQ5-zK-Ccc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wwb-Yl-CzA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-155.07246376811597" y="-78.348214285714278"/>
+        </scene>
+    </scenes>
+</document>
