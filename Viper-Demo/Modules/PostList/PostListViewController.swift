@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PostListViewController: UIViewController {
+class PostListViewController: UIViewController, Storyboarded {
     
     // MARK: - Properties
     private var posts = [Post]()
@@ -22,8 +22,15 @@ class PostListViewController: UIViewController {
         super.viewDidLoad()
         PostListRouter.createPostListModule(viewRef: self)
         presenter?.loadPosts()   
-    }    
+    }
+    
+    // MARK: - IBActions
+    @IBAction func addNewPost(_ sender: UIBarButtonItem) {
+        presenter?.showAddNewPost(view: self)
+    }
+    
 }
+
     // MARK: - Extensions
 extension PostListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

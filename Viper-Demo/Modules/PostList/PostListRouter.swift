@@ -9,6 +9,7 @@
 import Foundation
 
 class PostListRouter: PostListPresenterToRouterProtocol {
+    
     static func createPostListModule(viewRef: PostListViewController) {
         let presenter: PostListViewToPresenterProtocol & PostListInteractorToPresenterProtocol = PostListPresenter()
         viewRef.presenter = presenter
@@ -16,6 +17,11 @@ class PostListRouter: PostListPresenterToRouterProtocol {
         viewRef.presenter?.view = viewRef
         viewRef.presenter?.interactor = PostListInteractor()
         viewRef.presenter?.interactor?.presenter = presenter
+    }
+    
+    func showAddNewPost(view: PostListViewController) {
+        let addNewPostVC = NewPostViewController.instantiate(storyboard: .NewPost)
+        view.navigationController?.pushViewController(addNewPostVC, animated: true)
     }
     
 }

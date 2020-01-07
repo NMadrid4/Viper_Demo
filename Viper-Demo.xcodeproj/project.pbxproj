@@ -24,6 +24,14 @@
 		37D3518C23C51DDA00726EFC /* Callback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D3518B23C51DDA00726EFC /* Callback.swift */; };
 		37D3519123C5200E00726EFC /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D3519023C5200E00726EFC /* Util.swift */; };
 		37D3519323C5214500726EFC /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D3519223C5214500726EFC /* UIViewController+.swift */; };
+		37D3519723C52E6B00726EFC /* NewPost.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37D3519623C52E6B00726EFC /* NewPost.storyboard */; };
+		37D3519923C52E8700726EFC /* NewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D3519823C52E8700726EFC /* NewPostViewController.swift */; };
+		37D3519B23C5309700726EFC /* NewPostProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D3519A23C5309700726EFC /* NewPostProtocols.swift */; };
+		37D3519D23C5314800726EFC /* NewPostPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D3519C23C5314800726EFC /* NewPostPresenter.swift */; };
+		37D3519F23C5314E00726EFC /* NewPostInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D3519E23C5314E00726EFC /* NewPostInteractor.swift */; };
+		37D351A123C5315600726EFC /* NewPostRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D351A023C5315600726EFC /* NewPostRouter.swift */; };
+		37D351A323C531BE00726EFC /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D351A223C531BE00726EFC /* Storyboarded.swift */; };
+		37D351A523C531D200726EFC /* UIStoryboard+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D351A423C531D200726EFC /* UIStoryboard+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +55,14 @@
 		37D3518F23C51E0C00726EFC /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		37D3519023C5200E00726EFC /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		37D3519223C5214500726EFC /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
+		37D3519623C52E6B00726EFC /* NewPost.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewPost.storyboard; sourceTree = "<group>"; };
+		37D3519823C52E8700726EFC /* NewPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostViewController.swift; sourceTree = "<group>"; };
+		37D3519A23C5309700726EFC /* NewPostProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostProtocols.swift; sourceTree = "<group>"; };
+		37D3519C23C5314800726EFC /* NewPostPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostPresenter.swift; sourceTree = "<group>"; };
+		37D3519E23C5314E00726EFC /* NewPostInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostInteractor.swift; sourceTree = "<group>"; };
+		37D351A023C5315600726EFC /* NewPostRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostRouter.swift; sourceTree = "<group>"; };
+		37D351A223C531BE00726EFC /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
+		37D351A423C531D200726EFC /* UIStoryboard+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +131,7 @@
 		3774C8D123C4EB3700B9232A /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				37D3519523C52E4100726EFC /* NewPost */,
 				3774C8D623C4EB8C00B9232A /* PostList */,
 			);
 			path = Modules;
@@ -124,6 +141,8 @@
 			isa = PBXGroup;
 			children = (
 				37D3519223C5214500726EFC /* UIViewController+.swift */,
+				37D351A223C531BE00726EFC /* Storyboarded.swift */,
+				37D351A423C531D200726EFC /* UIStoryboard+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -191,6 +210,19 @@
 			path = Configurations;
 			sourceTree = "<group>";
 		};
+		37D3519523C52E4100726EFC /* NewPost */ = {
+			isa = PBXGroup;
+			children = (
+				37D3519823C52E8700726EFC /* NewPostViewController.swift */,
+				37D3519E23C5314E00726EFC /* NewPostInteractor.swift */,
+				37D3519C23C5314800726EFC /* NewPostPresenter.swift */,
+				37D351A023C5315600726EFC /* NewPostRouter.swift */,
+				37D3519A23C5309700726EFC /* NewPostProtocols.swift */,
+				37D3519623C52E6B00726EFC /* NewPost.storyboard */,
+			);
+			path = NewPost;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -256,6 +288,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				37D3517B23C5189D00726EFC /* PostList.storyboard in Resources */,
+				37D3519723C52E6B00726EFC /* NewPost.storyboard in Resources */,
 				3774C8C523C4EADE00B9232A /* LaunchScreen.storyboard in Resources */,
 				3774C8C223C4EADE00B9232A /* Assets.xcassets in Resources */,
 			);
@@ -268,18 +301,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37D351A523C531D200726EFC /* UIStoryboard+.swift in Sources */,
 				37D3519323C5214500726EFC /* UIViewController+.swift in Sources */,
+				37D3519F23C5314E00726EFC /* NewPostInteractor.swift in Sources */,
 				37D3518823C51BD300726EFC /* PostListInteractor.swift in Sources */,
 				3774C8D823C4EF1400B9232A /* PostListProtocols.swift in Sources */,
+				37D3519923C52E8700726EFC /* NewPostViewController.swift in Sources */,
+				37D3519B23C5309700726EFC /* NewPostProtocols.swift in Sources */,
 				37D3518223C5196E00726EFC /* PostListTableViewCell.swift in Sources */,
 				37D3518A23C51DD300726EFC /* EndPoint.swift in Sources */,
 				3774C8B923C4EADC00B9232A /* AppDelegate.swift in Sources */,
 				37D3518423C51BBD00726EFC /* PostListPresenter.swift in Sources */,
+				37D3519D23C5314800726EFC /* NewPostPresenter.swift in Sources */,
 				37D3519123C5200E00726EFC /* Util.swift in Sources */,
 				3774C8BB23C4EADC00B9232A /* SceneDelegate.swift in Sources */,
 				37D3517D23C518D800726EFC /* PostListViewController.swift in Sources */,
 				37D3518623C51BC400726EFC /* PostListRouter.swift in Sources */,
+				37D351A123C5315600726EFC /* NewPostRouter.swift in Sources */,
 				37D3518C23C51DDA00726EFC /* Callback.swift in Sources */,
+				37D351A323C531BE00726EFC /* Storyboarded.swift in Sources */,
 				37D3517923C5183500726EFC /* Post.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

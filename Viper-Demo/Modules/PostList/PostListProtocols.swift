@@ -14,8 +14,9 @@ protocol PostListViewToPresenterProtocol: class {
     var router: PostListPresenterToRouterProtocol? {get set}
     
     func loadPosts()
+    func showAddNewPost(view: PostListViewController)
 }
-
+ 
 protocol PostListPresenterToViewProtocol: class {
     func showPosts(posts: [Post])
     func showFailurePost(message: String)
@@ -33,4 +34,5 @@ protocol PostListPresenterToInteractorProtocol: class {
 
 protocol PostListPresenterToRouterProtocol: class {
     static func createPostListModule(viewRef: PostListViewController)
+    func showAddNewPost(view: PostListViewController)
 }

@@ -9,12 +9,17 @@
 import Foundation
 
 class PostListPresenter: PostListViewToPresenterProtocol {
+    
     var interactor: PostListPresenterToInteractorProtocol?
     var router: PostListPresenterToRouterProtocol?
     var view: PostListPresenterToViewProtocol?
     
     func loadPosts() {
         interactor?.getPosts()
+    }
+    
+    func showAddNewPost(view: PostListViewController) {
+        router?.showAddNewPost(view: view)
     }
 }
 
